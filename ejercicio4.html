@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body id="body">
+    <h1> ¡¡¡ La bomba !!! </h1>
+    <h2 id="timer">15</h2>
+    <script>
+      var timer_tag = document.getElementById('timer');
+      var timer = parseInt(timer_tag.innerHTML);
+      var counter = setInterval(function(){
+        timer = timer - 1;
+        timer_tag.innerHTML = timer;
+        if (timer == 0) {
+          explode();
+        }
+      }, 1000);
+
+      function explode() {
+        clearInterval(counter);
+        timer = 'BOOM!';
+        timer_tag.innerHTML = timer;
+        body = document.getElementById('body');
+        body.style.backgroundColor = 'red';
+      };
+  </script>
+  </body>
+</html>
